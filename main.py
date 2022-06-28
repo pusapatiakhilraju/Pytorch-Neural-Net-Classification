@@ -7,7 +7,7 @@ import cv2
 
 class ImagePreprocessor:
     def __init__(self):
-        self.folder = "/Users/akhil/PycharmProjects/Cats-and-Dogs-Segmentation/kaggleDataset/train"
+        self.folder = "/Users/akhil/Documents/Machine learning/Datasets/Cat vs Dog classifier/train"
         self.dict = {0: 'Cat', 1: ' Dog'}
 
     def load_data(self):
