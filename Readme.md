@@ -36,5 +36,20 @@ Even if the dtypes are given as none. The dtype of tensor will be float 32.
 10. Tensor Multiplication: Two types: 
 Element wise muiltiplication, Matrix Multiplication (Dot product).
 **TWO RULES**
-    -THE **INNER DIMENSIONS** must match: (3,2) matmul (3,2) will not work. (3,2) matmul (2,3) will work.
+    -THE **INNER DIMENSIONS** must match: (3,2) "matmul (3,2) will not work. (3,2) matmul (2,3) will work.
+        - To fix the wrongly shaped tensor. Use "Tranpose (T)". 
     -The resulting matrix has the shape of **Outer Dimensions**
+
+11. Find the index poition of the min and max values : Use argmin and argmax.
+
+12. * Reshaping : used to change the shape of tensor to a defined shape.
+    * View : Return the view of an input tensor but, keep the original shape. **note**A view will have a shared memory with the original tensor. Any change in the view variable will effect the original tensor variable.
+    * Stacking : Used to concatenate tensors either horizontally (hstack) or vertically (vstack). torch.stack can also be used to perform the same actions
+    * Sqeeze : removes all '1' dimensions to a target tensor 
+    * unsqeeze : adds '1' dimension to a target tensor
+    * permute : return a view of the tensor with dimensions swapped (permuted) in a certain way. **Note** It has a shared memory with original tensor
+
+13. Indexing: look at the shape of a tensor. use the shape to perform indexing. example: tensor shape (1,3,3) then max index will be tensor[0][2][2]. 
+    * Can use ":" to select all of a target dimension]
+
+14. Code reproducibility - use random seed and set torch.manual_seed(to thhe required random seed). This is not a global setting. Works only for 1 line of code. 
