@@ -1,0 +1,8 @@
+You're going to cover a standard PyTorch workflow (it can be chopped and changed as necessary but it covers the main outline of steps).
+Process:
+1. Get data read 
+2. build or pick pre-trained model - > 2.1 pick loss function and optimiser - > 2.2 build training loop 
+3. fit the model to data and make prediction 
+4. evaluate model
+5. improve through experimentation and fine tuning
+6. save and reload the trained model
