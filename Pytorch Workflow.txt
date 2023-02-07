@@ -6,3 +6,22 @@ Process:
 4. evaluate model
 5. improve through experimentation and fine tuning
 6. save and reload the trained model
+
+Building model involves: 
+1. Start with random values (weights and bias)
+2. Look at the training data and adjust the random values to better represent the ideal values
+**NOTE** premise of deep learning is to start with random values and get close to the actual values.
+ 
+
+These adjustments are made through 2 algorithms
+1. Gradient Descent needs "requires_grad = True". when we run computations, this allows pytorch to keep track of parameters and update them.
+2. Back Propogation
+
+Pytorch model building essentials
+1. torch.nn -> contains all of the buildings for computational graphs
+2. torch.nn.Parameter -> what parameters should the models learn. 
+3. torch.nn.Module - > the base class for all neural netowrk modules/
+4. torch.optmis -> this is where the optimisers in Pytorch live, they will help with gradient Descent
+5. def forward() -> all nn.Modulesubclasses require you to overwrite forward(). This methood defines what happens in forward computation.
+
+Use ".parameters()" to find the list of parameters (OR) use ".state_dict()" to get the dictionary of parameters 
