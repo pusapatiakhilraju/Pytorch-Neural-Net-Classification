@@ -25,3 +25,16 @@ Pytorch model building essentials
 5. def forward() -> all nn.Modulesubclasses require you to overwrite forward(). This methood defines what happens in forward computation.
 
 Use ".parameters()" to find the list of parameters (OR) use ".state_dict()" to get the dictionary of parameters 
+
+Predictions can be made using "torch.inference_mode()". This helps nopt to keep track of all the things like gradients. This is helpful during predictions because it makes predictions faster. Helpful while predicting large datasets.
+
+In pytroch fine tuning is done using the loss and optimizer: The loss defines how wrong the predictions are when compared to the actual outputs. The optimizer then takes this loss to adjust the parameters to improve the loss. Loss needs to be lower. 
+
+In training:
+1. Loop through the data
+2. Forward pass
+3. Calculate the loss (compare the forward pass results with ground truth labels)
+4. Optimize the zero grad
+5. Loss backwards - move backwards through the network to calculate the gradients of each parameter with respect to the loss
+6. optimizer step - use the optimizer to adjust the parameters and improve the loss (** Gradient Descent **)
+
