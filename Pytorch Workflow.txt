@@ -34,7 +34,15 @@ In training:
 1. Loop through the data
 2. Forward pass
 3. Calculate the loss (compare the forward pass results with ground truth labels)
-4. Optimize the zero grad
+4. Optimize the zero grad(). zero_grad is a function in the optimizer. This is done so that the gradient is not accumulated. If gradient is accumulating then the losses on the graph will never show a decrease.
 5. Loss backwards - move backwards through the network to calculate the gradients of each parameter with respect to the loss
 6. optimizer step - use the optimizer to adjust the parameters and improve the loss (** Gradient Descent **)
+
+In testing Loop:
+1. set model to eval()
+2. with torch.inference mode 
+3. do forward pass to find the test predictions
+4. calculate the loss
+
+
 
